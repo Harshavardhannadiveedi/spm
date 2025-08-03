@@ -11,7 +11,7 @@ function SearchStudents() {
     e.preventDefault();
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/users/search?query=${query}`,
+        `https://spm-1-mvbj.onrender.com/api/users/search?query=${query}`,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         }
@@ -55,7 +55,7 @@ function SearchStudents() {
                       permission={permission}
                       onUpdateStatus={(id, status) =>
                         axios.put(
-                          `http://localhost:5000/api/permissions/${id}`,
+                          `https://spm-1-mvbj.onrender.com/api/permissions/${id}`,
                           { status },
                           {
                             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },

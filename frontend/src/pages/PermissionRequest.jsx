@@ -21,7 +21,7 @@ function PermissionRequest() {
     e.preventDefault();
     try {
       await axios.post(
-        'http://localhost:5000/api/permissions',
+        'https://spm-1-mvbj.onrender.com/api/permissions',
         formData,
         {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },

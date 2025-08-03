@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem('token');
     if (token) {
       axios
-        .get('http://localhost:5000/api/auth/me', {
+        .get('https://spm-1-mvbj.onrender.com/api/auth/me', {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (emailOrRollNumber, password) => {
-    const response = await axios.post('http://localhost:5000/api/auth/login', {
+    const response = await axios.post('https://spm-1-mvbj.onrender.com/api/auth/login', {
       emailOrRollNumber,
       password,
     });
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (fullName, rollNumber, email, password) => {
-    const response = await axios.post('http://localhost:5000/api/auth/register', {
+    const response = await axios.post('https://spm-1-mvbj.onrender.com/api/auth/register', {
       fullName,
       rollNumber,
       email,
